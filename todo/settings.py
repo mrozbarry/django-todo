@@ -24,10 +24,7 @@ DEBUG = ENVIRONMENT != 'production'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o%w7g7-k8qcjc59ecwk1wfi@+bjv+(-&#d*#_kjuilu2hin-rd'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = os.environ.get('DJANGO_SECRET', 'o%w7g7-k8qcjc59ecwk1wfi@+bjv+(-&#d*#_kjuilu2hin-rd')
 
 ALLOWED_HOSTS = []
 
@@ -41,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -113,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Eastern'
 
 USE_I18N = True
 
