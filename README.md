@@ -15,8 +15,9 @@
  - Create the database, set your user's password, add user to the database using `psql`:
 
 ```sql
-CREATE DATABASE django_todo;
 ALTER USER django_todo SET PASSWORD 'super secret thing here' VALID UNTIL 'infinity';
+ALTER USER django_todo CREATEDB;
+CREATE DATABASE django_todo;
 GRANT ALL PRIVILEGES ON DATABASE django_todo TO django_todo;
 ```
 
@@ -36,17 +37,18 @@ $ python manage.py runserver
 ### The Plan
 
  - [x] Figure out the basics, lay some foundation.
- - [ ] Create a `TodoList` model, which has many `TodoListItem`s, and the following attributes:
+ - [x] Create a `TodoList` model, which has many `TodoListItem`s, and the following attributes:
   - id:integer
   - code:string, will be used for urls. Could replace id, but that ends up being less standard. Should be auto-generated on create.
   - name:string
   - public:boolean
- - [ ] Create `TodoListItem`, with the following attributes:
+ - [x] Create `TodoListItem`, with the following attributes:
   - id:integer, regular index
   - todo_list_id:integer
   - position:integer, for re-ordering the list
   - name:string
   - done_at:datetime, can be null
+ - [ ] Figure out some tests.
  - [ ] Add a view for public todo lists.
  - [ ] Add a view for showing/editing a todo list.
  - [ ] Add a link to create a new empty todo list from the public list.
