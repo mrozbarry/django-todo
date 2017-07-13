@@ -12,11 +12,9 @@
 
  - Install Postgres 9.x
  - Create a new postgres user for your app, `$ createuser django_todo`
- - Create the database, set your user's password, add user to the database:
+ - Create the database, set your user's password, add user to the database using `psql`:
 
 ```sql
-$ psql
----
 # CREATE DATABASE django_todo;
 # ALTER USER django_todo SET PASSWORD 'super secret thing here' VALID UNTIL 'infinity';
 # GRANT ALL PRIVILEGES ON DATABASE django_todo TO django_todo;
@@ -29,7 +27,7 @@ $ psql
 
 ### Running the server
 
-```python
+```bash
 $ python manage.py runserver
 ```
 
