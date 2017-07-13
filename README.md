@@ -15,10 +15,9 @@
  - Create the database, set your user's password, add user to the database using `psql`:
 
 ```sql
-# CREATE DATABASE django_todo;
-# ALTER USER django_todo SET PASSWORD 'super secret thing here' VALID UNTIL 'infinity';
-# GRANT ALL PRIVILEGES ON DATABASE django_todo TO django_todo;
-# \q
+CREATE DATABASE django_todo;
+ALTER USER django_todo SET PASSWORD 'super secret thing here' VALID UNTIL 'infinity';
+GRANT ALL PRIVILEGES ON DATABASE django_todo TO django_todo;
 ```
 
  - Set up the environment. `cp .env.example .env`
