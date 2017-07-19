@@ -5,7 +5,7 @@
 ### Snakey things
 
  - Install `python 2.7.5`. I used pyenv (`brew install pyenv` on Mac), but potentially just using the system Python 2.x is fine?
- - Install `pip` (`bre install pip` on Mac)
+ - Install `pip` (`brew install pip` on Mac)
  - Install app requirements using `pip -r ./requirements.txt`
 
 ### Environment
@@ -31,6 +31,7 @@ GRANT ALL PRIVILEGES ON DATABASE django_todo TO django_todo;
 $ python manage.py runserver
 ```
 
+I made an `alias pm='python manage.py'` to cut down on a bit of typing, so if I happen to accidentally bleed my shortcuts in, that's all it is. Nothing magical.
 
 ## Brief
 
@@ -48,7 +49,7 @@ $ python manage.py runserver
   - position:integer, for re-ordering the list
   - name:string
   - done_at:datetime, can be null
- - [ ] Figure out some tests.
+ - [x] Figure out some tests.
  - [ ] Add a view for public todo lists.
  - [ ] Add a view for showing/editing a todo list.
  - [ ] Add a link to create a new empty todo list from the public list.
