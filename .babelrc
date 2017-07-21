@@ -1,0 +1,34 @@
+{
+  "presets": [
+    "react",
+    "es2017"
+  ],
+  "env": {
+    "test": {
+      "plugins": []
+    },
+    "development": {
+      "plugins": [
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": [
+                  "react"
+                ],
+                "locals": [
+                  "module"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+  "production": {
+    "plugins": []
+  }
+}
+}
